@@ -4,5 +4,7 @@
 
 
 在程序目录添加.env文件，文件内添加openai_key才可以使用Chain功能
+
 OPENAI_API_KEY =
+
 OPENAI_API_BASE =

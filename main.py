@@ -109,13 +109,13 @@ class MainWindow(QMainWindow):
                 download_button.file_path = file_path
                 if os.path.exists(file_path):
                     download_button.clicked.connect(self.open_paper)
+                    chain_button = QPushButton("Chain")
+                    chain_button.clicked.connect(self.open_chain_dialog)
+                    self.result_table.setCellWidget(i, 3, chain_button)  # 注意这里的索引变为3，因为我们添加了一个新的列
                 else:
                     download_button.clicked.connect(self.download_paper)
                 self.result_table.setCellWidget(i, 2, download_button)
                 
-                chain_button = QPushButton("Chain")
-                chain_button.clicked.connect(self.open_chain_dialog)
-                self.result_table.setCellWidget(i, 3, chain_button)  # 注意这里的索引变为3，因为我们添加了一个新的列
 
         except Exception as e:
             print(f"Error occurred during parsing: {e}")
